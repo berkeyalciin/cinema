@@ -23,9 +23,12 @@ namespace cinema1
 
             // PictureBox'ın tag özelliği üzerinden resmin dosya yolunu al
             Image selectedImage = pictureBox2.Image;
+            String selectedName = pictureBox2.Name;
+
+            Console.WriteLine(selectedName);
 
             // Diğer forma geçiş
-            Detaylar detaylar = new Detaylar(selectedImage);
+            Detaylar detaylar = new Detaylar(selectedImage, selectedName);
             detaylar.Show();
             this.Hide(); 
 
@@ -37,9 +40,10 @@ namespace cinema1
 
             // PictureBox'ın tag özelliği üzerinden resmin dosya yolunu al
             Image selectedImage = pictureBox3.Image;
+            String selectedName = pictureBox3.Name;
 
             // Diğer forma geçiş
-            Detaylar detaylar = new Detaylar(selectedImage);
+            Detaylar detaylar = new Detaylar(selectedImage, selectedName);
             detaylar.Show();
             this.Hide();
         }
@@ -50,9 +54,10 @@ namespace cinema1
 
             // PictureBox'ın tag özelliği üzerinden resmin dosya yolunu al
             Image selectedImage = pictureBox1.Image;
+            String selectedName = pictureBox1.Name;
 
             // Diğer forma geçiş
-            Detaylar detaylar = new Detaylar(selectedImage);
+            Detaylar detaylar = new Detaylar(selectedImage, selectedName);
             detaylar.Show();
             this.Hide();
         }
@@ -63,9 +68,10 @@ namespace cinema1
 
             // PictureBox'ın tag özelliği üzerinden resmin dosya yolunu al
             Image selectedImage = pictureBox4.Image;
+            String selectedName = pictureBox4.Name;
 
             // Diğer forma geçiş
-            Detaylar detaylar = new Detaylar(selectedImage);
+            Detaylar detaylar = new Detaylar(selectedImage, selectedName);
             detaylar.Show();
             this.Hide();
         }
@@ -76,9 +82,10 @@ namespace cinema1
 
             // PictureBox'ın tag özelliği üzerinden resmin dosya yolunu al
             Image selectedImage = pictureBox5.Image;
+            String selectedName = pictureBox5.Name;
 
             // Diğer forma geçiş
-            Detaylar detaylar = new Detaylar(selectedImage);
+            Detaylar detaylar = new Detaylar(selectedImage, selectedName);
             detaylar.Show();
             this.Hide();
         }
@@ -89,9 +96,10 @@ namespace cinema1
 
             // PictureBox'ın tag özelliği üzerinden resmin dosya yolunu al
             Image selectedImage = pictureBox6.Image;
+            String selectedName = pictureBox6.Name;
 
             // Diğer forma geçiş
-            Detaylar detaylar = new Detaylar(selectedImage);
+            Detaylar detaylar = new Detaylar(selectedImage, selectedName);
             detaylar.Show();
             this.Hide();
         }
@@ -102,9 +110,10 @@ namespace cinema1
 
             // PictureBox'ın tag özelliği üzerinden resmin dosya yolunu al
             Image selectedImage = pictureBox7.Image;
+            String selectedName = pictureBox7.Name;
 
             // Diğer forma geçiş
-            Detaylar detaylar = new Detaylar(selectedImage);
+            Detaylar detaylar = new Detaylar(selectedImage, selectedName);
             detaylar.Show();
             this.Hide();
         }
@@ -115,9 +124,10 @@ namespace cinema1
 
             // PictureBox'ın tag özelliği üzerinden resmin dosya yolunu al
             Image selectedImage = pictureBox8.Image;
+            String selectedName = pictureBox8.Name;
 
             // Diğer forma geçiş
-            Detaylar detaylar = new Detaylar(selectedImage);
+            Detaylar detaylar = new Detaylar(selectedImage,selectedName);
             detaylar.Show();
             this.Hide();
         }
