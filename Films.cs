@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +17,66 @@ namespace cinema1
         public Films()
         {
             InitializeComponent();
+            List<string> imagePaths = new List<string>();
+            List<string> names = new List<string>();
+            SqlConnection conn = DatabaseConnection.Instance.Connection;
+            try
+            {
+                conn.Open();
+                string sqlQuery = "SELECT Resim from Filmler";
+                using (SqlCommand command = new SqlCommand(sqlQuery, conn))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string img = reader["Resim"].ToString();
+                            img = Path.Combine(img);
+                            // Resmi işlemek için gerekli kodları ekleyin, örneğin listeye ekleyebilirsiniz.
+                            // Örnek olarak bir liste oluşturalım:
+                            imagePaths.Add(img);
+                        }
+                    }
+                }
+                string sqlQueryName = "SELECT Name from Filmler";
+                using (SqlCommand command = new SqlCommand(sqlQueryName, conn))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string name = reader["Name"].ToString();
+                            // Resmi işlemek için gerekli kodları ekleyin, örneğin listeye ekleyebilirsiniz.
+                            // Örnek olarak bir liste oluşturalım:
+                            names.Add(name);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
+            this.pictureBox5.Image = Image.FromFile(imagePaths[0]);
+            this.pictureBox5.Name = names[0];
+            this.pictureBox6.Image = Image.FromFile(imagePaths[1]);
+            this.pictureBox6.Name = names[1];
+            this.pictureBox7.Image = Image.FromFile(imagePaths[2]);
+            this.pictureBox7.Name = names[2];
+            this.pictureBox8.Image = Image.FromFile(imagePaths[3]);
+            this.pictureBox8.Name = names[3];
+            this.pictureBox3.Image = Image.FromFile(imagePaths[4]);
+            this.pictureBox3.Name = names[4];
+            this.pictureBox2.Image = Image.FromFile(imagePaths[5]);
+            this.pictureBox2.Name = names[5];
+            this.pictureBox1.Image = Image.FromFile(imagePaths[6]);
+            this.pictureBox1.Name = names[6];
+            this.pictureBox4.Image = Image.FromFile(imagePaths[7]);
+            this.pictureBox4.Name = names[7];
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

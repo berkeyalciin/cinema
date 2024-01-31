@@ -29,45 +29,46 @@ namespace cinema1
             pictureBox2.Image = receivedImage;
             times = new List<TimeSpan>();
 
-            string connectionString = "Data Source=LAPTOP-LE9FBROO\\MSSQLSERVER01;Initial Catalog=cinema_db;Integrated Security=True";
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            SqlConnection conn = DatabaseConnection.Instance.Connection;
+            try
             {
-                try
+                conn.Open();
+                // Filtreleme işlemini WHERE kullanarak gerçekleştirin.
+                string sqlQueryName = "SELECT SeansTime FROM Seanslar WHERE Film = @receivedName";
+                using (SqlCommand command = new SqlCommand(sqlQueryName, conn))
                 {
-                    connection.Open();
-                    // Filtreleme işlemini WHERE kullanarak gerçekleştirin.
-                    string sqlQueryName = "SELECT SeansTime FROM Seanslar WHERE Film = @receivedName";
-                    using (SqlCommand command = new SqlCommand(sqlQueryName, connection))
-                    {
-                        command.Parameters.AddWithValue("@receivedName", receivedName);
+                    command.Parameters.AddWithValue("@receivedName", receivedName);
 
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                TimeSpan seansTime = (TimeSpan)reader["SeansTime"];
-                                times.Add(seansTime);
-                            }
-                        }
-                    }
-                    string sqlQueryDesc = "SELECT Aciklama FROM Filmler WHERE Name = @receivedName";
-                    using (SqlCommand command = new SqlCommand(sqlQueryDesc, connection))
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        command.Parameters.AddWithValue("@receivedName", receivedName);
-
-                        using (SqlDataReader reader = command.ExecuteReader())
+                        while (reader.Read())
                         {
-                            while (reader.Read())
-                            {
-                                description = reader["Aciklama"].ToString();
-                            }
+                            TimeSpan seansTime = (TimeSpan)reader["SeansTime"];
+                            times.Add(seansTime);
                         }
                     }
                 }
-                catch (Exception ex)
+                string sqlQueryDesc = "SELECT Aciklama FROM Filmler WHERE Name = @receivedName";
+                using (SqlCommand command = new SqlCommand(sqlQueryDesc, conn))
                 {
-                    Console.WriteLine(ex.ToString());
+                    command.Parameters.AddWithValue("@receivedName", receivedName);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            description = reader["Aciklama"].ToString();
+                        }
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();
             }
 
             button2.Text = times[0].ToString("hh\\:mm");

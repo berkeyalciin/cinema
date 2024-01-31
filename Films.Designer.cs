@@ -55,57 +55,10 @@ namespace cinema1
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
 
-            string connectionStrgin = "Data Source=LAPTOP-LE9FBROO\\MSSQLSERVER01;Initial Catalog=cinema_db;Integrated Security=True";
-            List<string> imagePaths = new List<string>();
-            List<string> names = new List<string>();
-            using (SqlConnection connection = new SqlConnection(connectionStrgin))
-            {
-                try
-                {
-                    connection.Open();
-                        string sqlQuery = "SELECT Resim from Filmler";
-                        using (SqlCommand command = new SqlCommand(sqlQuery, connection))
-                        {
-                            using (SqlDataReader reader = command.ExecuteReader())
-                            {
-                                while (reader.Read())
-                                {
-                                    string img = reader["Resim"].ToString();
-                                    img = Path.Combine(img);
-                                    // Resmi işlemek için gerekli kodları ekleyin, örneğin listeye ekleyebilirsiniz.
-                                    // Örnek olarak bir liste oluşturalım:
-                                    imagePaths.Add(img);
-                                }
-                            }
-                        }
-                        string sqlQueryName = "SELECT Name from Filmler";
-                        using (SqlCommand command = new SqlCommand(sqlQueryName, connection))
-                        {
-                            using (SqlDataReader reader = command.ExecuteReader())
-                            {
-                                while (reader.Read())
-                                {
-                                    string name = reader["Name"].ToString();
-                                    // Resmi işlemek için gerekli kodları ekleyin, örneğin listeye ekleyebilirsiniz.
-                                    // Örnek olarak bir liste oluşturalım:
-                                    names.Add(name);
-                                }
-                            }
-                        }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.ToString());
-                }
-            }
-
             // 
             // pictureBox5
             // 
-            //this.pictureBox5.Image = global::cinema1.Properties.Resources.film5;
-            this.pictureBox5.Image = Image.FromFile(imagePaths[0]);
             this.pictureBox5.Location = new System.Drawing.Point(12, 391);
-            this.pictureBox5.Name = names[0];
             this.pictureBox5.Size = new System.Drawing.Size(257, 366);
             this.pictureBox5.TabIndex = 10;
             this.pictureBox5.TabStop = false;
@@ -113,10 +66,7 @@ namespace cinema1
             // 
             // pictureBox6
             // 
-            //this.pictureBox6.Image = global::cinema1.Properties.Resources.film6;
-            this.pictureBox6.Image = Image.FromFile(imagePaths[1]);
             this.pictureBox6.Location = new System.Drawing.Point(302, 391);
-            this.pictureBox6.Name = names[1];
             this.pictureBox6.Size = new System.Drawing.Size(257, 366);
             this.pictureBox6.TabIndex = 9;
             this.pictureBox6.TabStop = false;
@@ -124,10 +74,7 @@ namespace cinema1
             // 
             // pictureBox7
             // 
-            //this.pictureBox7.Image = global::cinema1.Properties.Resources.film7;
-            this.pictureBox7.Image = Image.FromFile(imagePaths[2]);
             this.pictureBox7.Location = new System.Drawing.Point(591, 391);
-            this.pictureBox7.Name = names[2];
             this.pictureBox7.Size = new System.Drawing.Size(257, 366);
             this.pictureBox7.TabIndex = 8;
             this.pictureBox7.TabStop = false;
@@ -135,10 +82,7 @@ namespace cinema1
             // 
             // pictureBox8
             // 
-            //this.pictureBox8.Image = global::cinema1.Properties.Resources.film8;
-            this.pictureBox8.Image = Image.FromFile(imagePaths[3]);
             this.pictureBox8.Location = new System.Drawing.Point(885, 391);
-            this.pictureBox8.Name = names[3];
             this.pictureBox8.Size = new System.Drawing.Size(257, 366);
             this.pictureBox8.TabIndex = 7;
             this.pictureBox8.TabStop = false;
@@ -146,10 +90,7 @@ namespace cinema1
             // 
             // pictureBox3
             // 
-            //this.pictureBox3.Image = global::cinema1.Properties.Resources.film3;
-            this.pictureBox3.Image = Image.FromFile(imagePaths[4]);
             this.pictureBox3.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox3.Name = names[4];
             this.pictureBox3.Size = new System.Drawing.Size(257, 366);
             this.pictureBox3.TabIndex = 6;
             this.pictureBox3.TabStop = false;
@@ -157,10 +98,7 @@ namespace cinema1
             // 
             // pictureBox2
             // 
-            //this.pictureBox2.Image = global::cinema1.Properties.Resources.film1;
-            this.pictureBox2.Image = Image.FromFile(imagePaths[5]);
             this.pictureBox2.Location = new System.Drawing.Point(302, 12);
-            this.pictureBox2.Name = names[5];
             this.pictureBox2.Size = new System.Drawing.Size(257, 366);
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
@@ -168,10 +106,7 @@ namespace cinema1
             // 
             // pictureBox1
             // 
-            //this.pictureBox1.Image = global::cinema1.Properties.Resources.film2;
-            this.pictureBox1.Image = Image.FromFile(imagePaths[6]);
             this.pictureBox1.Location = new System.Drawing.Point(591, 12);
-            this.pictureBox1.Name = names[6];
             this.pictureBox1.Size = new System.Drawing.Size(257, 366);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -179,10 +114,7 @@ namespace cinema1
             // 
             // pictureBox4
             // 
-            //this.pictureBox4.Image = global::cinema1.Properties.Resources.film4;
-            this.pictureBox4.Image = Image.FromFile(imagePaths[7]);
             this.pictureBox4.Location = new System.Drawing.Point(885, 12);
-            this.pictureBox4.Name = names[7];
             this.pictureBox4.Size = new System.Drawing.Size(257, 366);
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
