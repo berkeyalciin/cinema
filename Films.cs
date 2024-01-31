@@ -32,8 +32,6 @@ namespace cinema1
                         {
                             string img = reader["Resim"].ToString();
                             img = Path.Combine(img);
-                            // Resmi işlemek için gerekli kodları ekleyin, örneğin listeye ekleyebilirsiniz.
-                            // Örnek olarak bir liste oluşturalım:
                             imagePaths.Add(img);
                         }
                     }
@@ -46,8 +44,6 @@ namespace cinema1
                         while (reader.Read())
                         {
                             string name = reader["Name"].ToString();
-                            // Resmi işlemek için gerekli kodları ekleyin, örneğin listeye ekleyebilirsiniz.
-                            // Örnek olarak bir liste oluşturalım:
                             names.Add(name);
                         }
                     }
@@ -86,8 +82,6 @@ namespace cinema1
             // PictureBox'ın tag özelliği üzerinden resmin dosya yolunu al
             Image selectedImage = pictureBox2.Image;
             String selectedName = pictureBox2.Name;
-
-            Console.WriteLine(selectedName);
 
             // Diğer forma geçiş
             Detaylar detaylar = new Detaylar(selectedImage, selectedName);

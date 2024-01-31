@@ -54,11 +54,11 @@ namespace cinema1
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
-
             // 
             // pictureBox5
             // 
             this.pictureBox5.Location = new System.Drawing.Point(12, 391);
+            this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(257, 366);
             this.pictureBox5.TabIndex = 10;
             this.pictureBox5.TabStop = false;
@@ -67,6 +67,7 @@ namespace cinema1
             // pictureBox6
             // 
             this.pictureBox6.Location = new System.Drawing.Point(302, 391);
+            this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(257, 366);
             this.pictureBox6.TabIndex = 9;
             this.pictureBox6.TabStop = false;
@@ -75,6 +76,7 @@ namespace cinema1
             // pictureBox7
             // 
             this.pictureBox7.Location = new System.Drawing.Point(591, 391);
+            this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(257, 366);
             this.pictureBox7.TabIndex = 8;
             this.pictureBox7.TabStop = false;
@@ -83,6 +85,7 @@ namespace cinema1
             // pictureBox8
             // 
             this.pictureBox8.Location = new System.Drawing.Point(885, 391);
+            this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(257, 366);
             this.pictureBox8.TabIndex = 7;
             this.pictureBox8.TabStop = false;
@@ -91,6 +94,7 @@ namespace cinema1
             // pictureBox3
             // 
             this.pictureBox3.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(257, 366);
             this.pictureBox3.TabIndex = 6;
             this.pictureBox3.TabStop = false;
@@ -99,6 +103,7 @@ namespace cinema1
             // pictureBox2
             // 
             this.pictureBox2.Location = new System.Drawing.Point(302, 12);
+            this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(257, 366);
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
@@ -107,6 +112,7 @@ namespace cinema1
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(591, 12);
+            this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(257, 366);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -115,6 +121,7 @@ namespace cinema1
             // pictureBox4
             // 
             this.pictureBox4.Location = new System.Drawing.Point(885, 12);
+            this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(257, 366);
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
@@ -135,6 +142,7 @@ namespace cinema1
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox4);
             this.Name = "Films";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Filmler";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();

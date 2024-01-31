@@ -33,7 +33,7 @@ namespace cinema1
             try
             {
                 conn.Open();
-                // Filtreleme işlemini WHERE kullanarak gerçekleştirin.
+
                 string sqlQueryName = "SELECT SeansTime FROM Seanslar WHERE Film = @receivedName";
                 using (SqlCommand command = new SqlCommand(sqlQueryName, conn))
                 {
@@ -85,33 +85,40 @@ namespace cinema1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            button2.BackColor = Color.Green;
+            // Diğer forma geçiş
+            Rezervasyon rez = new Rezervasyon(button2.Text, receivedName);
+            rez.Show();
+            this.Hide();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            button3.BackColor = Color.Green;
+            // Diğer forma geçiş
+            Rezervasyon rez = new Rezervasyon(button3.Text, receivedName);
+            rez.Show();
+            this.Hide();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            button4.BackColor = Color.Green;
+            // Diğer forma geçiş
+            Rezervasyon rez = new Rezervasyon(button4.Text, receivedName);
+            rez.Show();
+            this.Hide();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            button5.BackColor = Color.Green;
+            // Diğer forma geçiş
+            Rezervasyon rez = new Rezervasyon(button5.Text, receivedName);
+            rez.Show();
+            this.Hide();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            button6.BackColor = Color.Green;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
             // Diğer forma geçiş
-            Rezervasyon rez = new Rezervasyon();
+            Rezervasyon rez = new Rezervasyon(button6.Text, receivedName);
             rez.Show();
             this.Hide();
         }

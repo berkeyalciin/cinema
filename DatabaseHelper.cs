@@ -11,7 +11,6 @@ namespace cinema1
 
         private DatabaseConnection()
         {
-            // Veritabanı bağlantı dizesini burada tanımlayın.
             connectionString = "Data Source=LAPTOP-LE9FBROO\\MSSQLSERVER01;Initial Catalog=cinema_db;Integrated Security=True";
             connection = new SqlConnection(connectionString);
         }

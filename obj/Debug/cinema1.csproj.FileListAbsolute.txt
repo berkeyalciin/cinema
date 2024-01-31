@@ -3,7 +3,6 @@ C:\Users\berke\source\repos\cinema1\obj\Debug\cinema1.Detaylar.resources
 C:\Users\berke\source\repos\cinema1\obj\Debug\cinema1.Films.resources
 C:\Users\berke\source\repos\cinema1\obj\Debug\cinema1.Login.resources
 C:\Users\berke\source\repos\cinema1\obj\Debug\cinema1.Menu.resources
-C:\Users\berke\source\repos\cinema1\obj\Debug\cinema1.Popup.resources
 C:\Users\berke\source\repos\cinema1\obj\Debug\cinema1.Properties.Resources.resources
 C:\Users\berke\source\repos\cinema1\obj\Debug\cinema1.Rezervasyon.resources
 C:\Users\berke\source\repos\cinema1\obj\Debug\cinema1.csproj.GenerateResource.cache
